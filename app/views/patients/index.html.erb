@@ -1,0 +1,14 @@
+<% provide(:title, 'All Patients') %>
+
+<h1>Patients</h1>
+
+<hr>
+<% @patients.each do |patient| %>
+  <h4>Name: <%= patient.name %></h4>
+  <p><%= link_to 'See more information', patient_path(patient) %></p>
+
+  <hr>
+<% end %>
+
+<br>
+<%= link_to 'Create a new Patient', new_patient_path %>

@@ -1,0 +1,11 @@
+<h1>Doctor</h1>
+<hr>
+<h4>Name: <%= @doctor.name %></h4>
+<p>Experience: <%= @doctor.experience %> year(s)</p>
+<hr>
+<p>Number of Appointments: <%= @doctor.appointments.count %></p>
+<p>
+  <% @doctor.appointments.each_with_index do |appointment, index| %>
+    Appointment No. <%= index + 1 %> - Date: <%= appointment.month %> <%= appointment.day %><br>
+  <% end %>
+</p>

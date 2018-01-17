@@ -1,0 +1,8 @@
+<h1>Patient</h1>
+
+<% flash.each do |message_type, message| %>
+  <div><%= message %></div>
+<% end %>
+
+<h4>Name: <%= @patient.name %></h4>
+<p>Age: <%= @patient.age %></p>
