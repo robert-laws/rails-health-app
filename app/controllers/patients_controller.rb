@@ -5,10 +5,12 @@ class PatientsController < ApplicationController
 
   def show
     @patient = Patient.find(params[:id])
+    @insurance_cards = @patient.insurance_cards
   end
 
   def new
     @patient = Patient.new
+    @patient.insurance_cards.build
   end
 
   def create
@@ -24,6 +26,6 @@ class PatientsController < ApplicationController
   private
 
     def patient_params
-      params.require(:patient).permit(:name, :age)
+      params.require(:patient).permit(:name, :age, insurance_cards_attributes: [:name])
     end
 end

@@ -4,5 +4,14 @@
   <div><%= message %></div>
 <% end %>
 
-<h4>Name: <%= @patient.name %></h4>
+<h4>Patient Information</h4>
+<p>Name: <%= @patient.name %></p>
 <p>Age: <%= @patient.age %></p>
+<br>
+
+<h4>Patient Insurance Cards</h4>
+<p>Number of cards: <%= @insurance_cards.count %></p>
+<p>Card Names:</p>
+<% @insurance_cards.each_with_index do |card, index| %>
+  <%= index + 1 %>. <%= card.name %>
+<% end %>
