@@ -5,10 +5,10 @@
 <hr>
 <% @patients.each do |patient| %>
   <h4>Name: <%= patient.name %></h4>
-  <p><%= link_to 'See more information', patient_path(patient) %></p>
+  <p>-- <%= link_to 'See more information', patient_path(patient) %></p>
 
   <hr>
 <% end %>
 
 <br>
-<%= link_to 'Create a new Patient', new_patient_path %>
+-- <%= link_to 'Create a new Patient', new_patient_path %>

@@ -1,7 +1,13 @@
 class Patient < ApplicationRecord
-  has_many :insurance_cards
+  belongs_to :insurance_card
   has_many :appointments
   has_many :doctors, through: :appointments
 
-  accepts_nested_attributes_for :insurance_cards, reject_if: lambda { |attributes| attributes[:name].blank? }
+  def insurance_card_name=(name)
+    self.insurance_card = InsuranceCard.find_or_create_by(name: name)
+  end
+
+  def insurance_card_name
+    self.insurance_card.name
+  end
 end

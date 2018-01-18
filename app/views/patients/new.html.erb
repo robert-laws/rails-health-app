@@ -6,7 +6,6 @@
     <%= f.label :name %>: 
     <%= f.text_field :name %>
   </div>
-
   <div>
     <%= f.label :age %>: 
     <%= f.number_field :age %>
@@ -14,11 +13,13 @@
   <br>
   <div>
     Patient Insurance Card Information:<br>
-    <%= f.fields_for :insurance_cards do |card_form| %>
-      <%= card_form.label "Card Name" %>: 
-      <%= card_form.text_field :name %>
-    <% end %>
+    <select name="patient[insurance_card_name]">
+      <% InsuranceCard.all.each do |card| %>
+        <option value="<%= card.name %>"><%= card.name %></option>
+      <% end %>
+    </select>
   </div>
+  <br>
   
   <p><%= f.submit %></p>
 <% end %>

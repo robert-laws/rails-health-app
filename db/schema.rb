@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20180117131105) do
 
   create_table "insurance_cards", force: :cascade do |t|
     t.string "name"
-    t.integer "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180117131105) do
   create_table "patients", force: :cascade do |t|
     t.string "name"
     t.integer "age"
+    t.integer "insurance_card_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

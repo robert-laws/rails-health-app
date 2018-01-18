@@ -1,0 +1,12 @@
+<h1>Appointments</h1>
+
+<% @appointments.each do |appointment| %>
+  <%= link_to 'View Details', appointment_path(appointment.id) %>
+  <br>
+  Date: <%= appointment.month %>, <%= appointment.day %>
+  <br>
+  Doctor: <%= appointment.doctor.name %>
+  <br>
+  Patient: <%= appointment.patient.name %>
+  <hr>
+<% end %>
