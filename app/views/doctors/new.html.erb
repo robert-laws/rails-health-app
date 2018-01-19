@@ -1,0 +1,24 @@
+<h1>Create a New Doctor with Hospital</h1>
+
+<%= form_for @doctor do |f| %>
+  <h4>Doctor Information</h4>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :experience %>
+  <%= f.number_field :experience %>
+  <br>
+  <h4>Hospital Information</h4>
+  <%= f.fields_for :hospitals do |hospital_form| %>
+    <%= hospital_form.label :name %>
+    <%= hospital_form.text_field :name %>
+    <br>
+    <%= hospital_form.label :years_worked %>
+    <%= hospital_form.number_field :years_worked %>
+    <br>
+    <%= hospital_form.label :area %>
+    <%= hospital_form.text_field :area %>
+  <% end %>
+  <br>
+  <%= f.submit %>
+<% end %>

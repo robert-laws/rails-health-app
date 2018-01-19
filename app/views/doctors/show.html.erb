@@ -9,3 +9,9 @@
     Appointment No. <%= index + 1 %> - Date: <%= appointment.month %> <%= appointment.day %><br>
   <% end %>
 </p>
+<p>Hospital Information:</p>
+<p>
+  <% @doctor.hospitals.each do |hospital| %>
+    <%= hospital.name %>
+  <% end %>
+</p>

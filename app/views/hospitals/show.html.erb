@@ -1,0 +1,9 @@
+<h1>Hospital</h1>
+
+<h4><%= @hospital.name %></h4>
+
+<ul>
+  <% @hospital.categories.each do |category| %>
+    <li><%= category.name %></li>
+  <% end %>
+</ul>

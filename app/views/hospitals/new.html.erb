@@ -1,0 +1,18 @@
+<h1>Create a New Hospital with Cateogies</h1>
+
+<%= form_for @hospital do |f| %>
+  <%= f.label "Name" %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label "Years Worked" %>
+  <%= f.number_field :years_worked %>
+  <br>
+  <%= f.label "Area" %>
+  <%= f.text_field :area %>
+  <%= f.hidden_field :doctor_id, value: 1 %>
+  <h4>Categories</h4>
+  <%= f.label "Select One or More Category"%><br>
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+  <br>
+  <%= f.submit %>
+<% end %>
